@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('josefinsans/JosefinSans-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DM Sans';
+    src: url('dmsans/DMSans-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
