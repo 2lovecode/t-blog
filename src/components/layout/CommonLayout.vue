@@ -9,7 +9,7 @@
                 </el-col>
             </el-row>
             <el-row type="flex" justify="space-around">
-                <el-menu id="header-nav" default-active="/"  mode="horizontal" text-color="#262525" active-text-color="#EC586D" :router=true>
+                <el-menu id="header-nav" :default-active="defaultRoute"  mode="horizontal" text-color="#262525" active-text-color="#EC586D" :router=true>
                     <el-menu-item class="nav-item" v-for="(item, idx) in navList" :key="idx" :index="item.path">{{ item.title }}</el-menu-item>
                 </el-menu>
             </el-row>
@@ -45,6 +45,11 @@ export default {
                 },
             ]
         }
+    },
+    computed : {
+        defaultRoute: function () {
+            return this.$route.path
+        },
     }
 }
 </script>
