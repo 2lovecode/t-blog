@@ -26,12 +26,10 @@ export default {
 .t-title {
   font-family: "Josefin Sans", sans-serif;
 }
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .clearfix:after {
     display: table;
     content: "";
 }
-
 .clearfix:after {
     clear: both
 }

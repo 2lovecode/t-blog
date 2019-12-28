@@ -3,9 +3,9 @@
         <el-header style="height:auto;">
             <el-row style="padding-top: 50px;">
                 <el-col :span="24" style="margin:20px auto;">
-                    <a id="home-logo" class="t-title">
+                    <el-link href="/" :underline="false" id="home-logo" class="t-title">
                         2lovecode<span class="red-dot"></span>
-                    </a>
+                    </el-link>
                 </el-col>
             </el-row>
             <el-row type="flex" justify="space-around">
@@ -26,6 +26,7 @@
 export default {
     data () {
         return {
+            homePage: "/",
             navList: [
                 {
                     path: "/",
@@ -55,8 +56,12 @@ export default {
 </script>
 <style>
     #home-logo {
+        color:black;
         font-size: 60px;
         font-weight: 800;
+    }
+    #home-logo:hover {
+        color: #596172;
     }
     .red-dot {
         display: inline-block;
