@@ -4,7 +4,7 @@
             <el-row style="padding-top: 50px;">
                 <el-col :span="24" style="margin:20px auto;">
                     <a id="home-logo" class="t-title">
-                        Veen<span class="red-dot"></span>
+                        2lovecode<span class="red-dot"></span>
                     </a>
                 </el-col>
             </el-row>

@@ -18,7 +18,9 @@ export default {
 <style>
 #app {
   font-family: "DM Sans", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
+  letter-spacing: 0.25px;
+  line-height: 1.8;
   text-align: center;
 }
 .t-title {
