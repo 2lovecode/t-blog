@@ -9,11 +9,8 @@
                 </el-col>
             </el-row>
             <el-row type="flex" justify="space-around">
-                <el-menu id="header-nav" default-active="1" mode="horizontal" text-color="#262525" active-text-color="#EC586D">
-                    <el-menu-item class="nav-item" index="1">首页</el-menu-item>
-                    <el-menu-item class="nav-item" index="2">编程开发</el-menu-item>
-                    <el-menu-item class="nav-item" index="3">程序人生</el-menu-item>
-                    <el-menu-item class="nav-item" index="4">关于作者</el-menu-item>
+                <el-menu id="header-nav" default-active="/"  mode="horizontal" text-color="#262525" active-text-color="#EC586D" :router=true>
+                    <el-menu-item class="nav-item" v-for="(item, idx) in navList" :key="idx" :index="item.path">{{ item.title }}</el-menu-item>
                 </el-menu>
             </el-row>
         </el-header>
@@ -27,6 +24,28 @@
 
 <script>
 export default {
+    data () {
+        return {
+            navList: [
+                {
+                    path: "/",
+                    title: "首页",
+                },
+                {
+                    path: "/article/1",
+                    title: "编程开发",
+                },
+                {
+                    path: "/article/2",
+                    title: "程序人生",
+                },
+                {
+                    path: "/article/3",
+                    title: "关于作者",
+                },
+            ]
+        }
+    }
 }
 </script>
 <style>

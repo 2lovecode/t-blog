@@ -1,60 +1,44 @@
 <template>
-
     <el-row type="flex" justify="center">
-        
         <el-col :span="16" >
-            <el-card shadow="never" body-style="padding:0" style="border:0 solid #fff;">
-                <a href="#" style=":hover{pointer:cursor;}">
-                    <span class="article-list-img" style="background-image: url(http://ghost.estudiopatagon.com/veen/content/images/size/w1500h500/2019/10/chris-lawton-5IHz5WhosQE-unsplash.jpg);">
+            <el-card v-for="(item, index) in articleList" v-bind:key="index" shadow="never" body-style="padding:0" style="border:0 solid #fff;">
+                <router-link v-bind:to="item.skipUrl" style=":hover{pointer:cursor;}">
+                    <span class="article-list-img" v-bind:style="{ backgroundImage: 'url(' + item.image + ')' }">
                         <h1 class="article-list-title">
-                            <a>The spectacle before us was indeed sublime</a>
+                            <a>{{ item.title }}</a>
                         </h1>
                         <el-button class="article-detail-button" type="danger" round="">Continue Reading</el-button>
                     </span>
-                </a>
+                </router-link>
                 <el-row type="flex" justify="center" style="margin-top:30px;" class="article-list-header">
                     <el-col :xs="24" :sm="12" :md="8" :lg="4" :xl="4">
                         <el-link :underline="false">
-                            <span class="author-image cover" style="background-image: url(http://ghost.estudiopatagon.com/veen/content/images/2019/10/avatar-3.jpg);"></span>
-                            <span>2lovecode</span>
+                            <span class="author-image cover" v-bind:style="{ backgroundImage: 'url(' + item.authorAvatar + ')' }"></span>
+                            <span>{{ item.author }}</span>
                         </el-link>
                     </el-col>
                     <el-col :xs="24" :sm="12" :md="8" :lg="4" :xl="4">
                         <el-link :underline="false">
                             <span class="time-icon"></span>
-                            <span>October 17, 2019</span>
+                            <span>{{ item.createdTime }}</span>
                         </el-link>
                     </el-col>
                     <el-col :xs="24" :sm="12" :md="8" :lg="4" :xl="4">
-                        <el-link :underline="false" icon="el-icon-reading">
-                            <span>1000 Read</span>
+                        <el-link :underline="false">
+                            <span class="article-reading">{{ item.visited }}</span>
+                            <span> Visited</span>
                         </el-link>
                     </el-col>
                 </el-row>
                 <el-row type="flex" justify="center" class="article-list-content">
                     <el-col :span="20" style="margin:25px 0;">
-                        Welcome, it's great to have you here. We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time....
+                        {{ item.summary }}
                     </el-col>
                 </el-row>
                 <el-row type="flex" justify="center" class="article-list-tags">
                     <i class="el-icon-price-tag"></i>
-                    <el-col :span="1">
-                        <el-link :underline="false">编程</el-link>
-                    </el-col>
-                    <el-col :span="1">
-                        <el-link :underline="false">人生</el-link>
-                    </el-col>
-                    <el-col :span="1">
-                        <el-link :underline="false">编程</el-link>
-                    </el-col>
-                    <el-col :span="1">
-                        <el-link :underline="false">人生</el-link>
-                    </el-col>
-                    <el-col :span="1">
-                        <el-link :underline="false">编程</el-link>
-                    </el-col>
-                    <el-col :span="1">
-                        <el-link :underline="false">人生</el-link>
+                    <el-col :span="1" v-for="(tagItem, tagIndex) in item.tags" v-bind:key="tagIndex">
+                        <el-link :underline="false">{{ tagItem }}</el-link>
                     </el-col>
                 </el-row>
                 <div class="epcl-border small"></div>
@@ -65,7 +49,36 @@
 </template>
 <script>
 export default {
-    
+    data () {
+        return {
+            articleList : [
+                {
+                    articleID: 1,
+                    title: "编程技巧",
+                    author: "2lovecode",
+                    authorAvatar: "http://ghost.estudiopatagon.com/veen/content/images/2019/10/avatar-3.jpg",
+                    createdTime: "October 17, 2019",
+                    image: "http://ghost.estudiopatagon.com/veen/content/images/size/w1500h500/2019/10/chris-lawton-5IHz5WhosQE-unsplash.jpg",
+                    summary: "Welcome, it's great to have you here. We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time....",
+                    visited: "100万+",
+                    skipUrl: "article/1",
+                    tags: ["tag1", "tag2", "tag2"],
+                },
+                {
+                    articleID: 2,
+                    title: "The spectacle before us was indeed sublime",
+                    author: "2lovecode",
+                    authorAvatar: "http://ghost.estudiopatagon.com/veen/content/images/2019/10/avatar-1.jpg",
+                    createdTime: "October 17, 2019",
+                    image: "http://ghost.estudiopatagon.com/veen/content/images/size/w1500h500/2019/10/janita-sumeiko-ZK1WQDMQvik-unsplash.jpg",
+                    summary: "Welcome, it's great to have you here. We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time....",
+                    visited: "2000+",
+                    skipUrl: "article/2",
+                    tags: ["tag1", "tag2", "tag2"],
+                }
+            ]
+        }
+    },
 }
 </script>
 <style>
@@ -210,5 +223,19 @@ export default {
         -ms-transition: all 300ms ease;
         -o-transition: all 300ms ease;
         transition: all 300ms ease;
+    }
+    .article-reading {
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+        border-radius: 50%;
+        color: #fff;
+        background-color: #7169FE;
+        text-align: center;
+        line-height: 21px;
+        font-size: 10px;
+        vertical-align: middle;
+        /* margin-top: -3px; */
+        overflow: hidden;
     }
 </style>
