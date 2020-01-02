@@ -99,6 +99,19 @@ export default {
         -o-transition: all 300ms ease;
         transition: all 300ms ease;
     }
+    @media screen and (max-width: 990px) and (min-width: 768px) {
+        .article-list-img {
+            min-height: 325px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .article-list-img {
+            -webkit-box-shadow: 0 3px 12px -1px rgba(7, 10, 25, 0.2), 0 22px 27px -20px rgba(7, 10, 25, 0.2);
+            box-shadow: 0 3px 12px -1px rgba(7, 10, 25, 0.2), 0 22px 27px -20px rgba(7, 10, 25, 0.2);
+            min-height: 200px;
+            height: 200px!important;
+        }
+    }
     .article-detail-button {
         opacity: 0;
         position: absolute;

@@ -4,7 +4,7 @@
             <el-row style="padding-top: 50px;">
                 <el-col :span="24" style="margin:20px auto;">
                     <el-link href="/" :underline="false" id="home-logo" class="t-title">
-                        2lovecode<span class="red-dot"></span>
+                        {{ appName }}<span class="red-dot"></span>
                     </el-link>
                 </el-col>
             </el-row>
@@ -18,7 +18,7 @@
             <router-view></router-view>
         </el-main>
         <el-divider></el-divider>
-        <el-footer>2lovecode</el-footer>
+        <el-footer>{{ appName }}</el-footer>
     </el-container>
 </template>
 
@@ -26,6 +26,7 @@
 export default {
     data () {
         return {
+            appName: "Veen",
             homePage: "/",
             navList: [
                 {

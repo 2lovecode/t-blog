@@ -14,11 +14,24 @@ export default {
   }
 }
 </script>
-
 <style>
+body {
+  font-size: 16px;
+}
+@media screen and (max-width: 990px) and (min-width: 768px) {
+  body {
+      font-size: 14px;
+  }
+}
+@media screen and (max-width: 767px) {
+  body {
+      font-size: 13px;
+  }
+}
+
+
 #app {
   font-family: "DM Sans", sans-serif;
-  font-size: 16px;
   letter-spacing: 0.25px;
   line-height: 1.8;
   text-align: center;
