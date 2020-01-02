@@ -2,13 +2,15 @@
     <el-row type="flex" justify="center">
         <el-col :span="16" >
             <el-card v-for="(item, index) in articleList" v-bind:key="index" shadow="never" body-style="padding:0" style="border:0 solid #fff;">
-                <router-link v-bind:to="item.skipUrl" style=":hover{pointer:cursor;}">
-                    <span class="article-list-img" v-bind:style="{ backgroundImage: 'url(' + item.image + ')' }">
+                <router-link v-bind:to="item.skipUrl" style=":hover{cursor: pointer;text-decoration:none;}">
+                    <div class="article-list-cover">
+                        <span class="article-list-img" v-bind:style="{ backgroundImage: 'url(' + item.image + ')' }">
+                            <el-button class="article-detail-button" type="danger" round="">Continue Reading</el-button>
+                        </span>
                         <h1 class="article-list-title">
                             <a>{{ item.title }}</a>
                         </h1>
-                        <el-button class="article-detail-button" type="danger" round="">Continue Reading</el-button>
-                    </span>
+                    </div>
                 </router-link>
                 <el-row type="flex" justify="center" style="margin-top:30px;" class="article-list-header">
                     <el-col :xs="24" :sm="12" :md="8" :lg="4" :xl="4">
@@ -36,9 +38,13 @@
                     </el-col>
                 </el-row>
                 <el-row type="flex" justify="center" class="article-list-tags">
-                    <i class="el-icon-price-tag"></i>
-                    <el-col :span="1" v-for="(tagItem, tagIndex) in item.tags" v-bind:key="tagIndex">
-                        <el-link :underline="false">{{ tagItem }}</el-link>
+                    <el-col :span="12" style="text-align:center;">
+                        <i class="tag-list-item el-icon-price-tag"></i>
+                        <div class="tag-list">
+                            <span class="tag-list-item" v-for="(tagItem, tagIndex) in item.tags" v-bind:key="tagIndex">
+                                <a href="#">{{ tagItem }}</a>
+                            </span>
+                        </div>
                     </el-col>
                 </el-row>
                 <div class="epcl-border small"></div>
@@ -62,7 +68,7 @@ export default {
                     summary: "Welcome, it's great to have you here. We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time....",
                     visited: "100万+",
                     skipUrl: "article/1",
-                    tags: ["tag1", "tag2", "tag2"],
+                    tags: ["tag1", "tag2", "tag3"],
                 },
                 {
                     articleID: 2,
@@ -74,7 +80,7 @@ export default {
                     summary: "Welcome, it's great to have you here. We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time....",
                     visited: "2000+",
                     skipUrl: "article/2",
-                    tags: ["tag1", "tag2", "tag2"],
+                    tags: ["tag1", "tag2", "tag3"],
                 }
             ]
         }
@@ -147,6 +153,9 @@ export default {
     .article-list-header .el-link:hover{
         color: #FF486A;
     }
+    .article-list-cover {
+        position: relative;
+    }
     .article-list-title {
         position: absolute;
         left: 40px;
@@ -168,6 +177,25 @@ export default {
         -o-transition: all 700ms ease;
         transition: all 700ms ease;
     }
+    /* .article-list-list:hover .article-list-title{
+        pointer: cursor;
+    } */
+    @media screen and (max-width: 980px) {
+        .article-list-title {
+            font-size: 20px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .article-list-title {
+            position: relative;
+            left: auto;
+            bottom: auto;
+            max-width: none;
+            margin-top: 25px;
+            text-align: center;
+        }
+    }
+
     .article-list-img:hover .article-list-title{
         opacity: 0;
         left: 0px;
@@ -181,20 +209,28 @@ export default {
         color: #596172;
     }
     
-    .article-list-tags .el-link{
+    .article-list-tags a {
         font-size: 13px;
         color: #596172;
     }
-    .article-list-tags .el-link:hover{
+    .article-list-tags a:hover{
         color: #FF486A;
     }
     .article-list-tags i {
+        display: inline-block;
         line-height: 1.7;
         transform:rotate(25deg);
         -ms-transform:rotate(25deg); 	/* IE 9 */
         -moz-transform:rotate(25deg); 	/* Firefox */
         -webkit-transform:rotate(25deg); /* Safari 和 Chrome */
         -o-transform:rotate(25deg);
+    }
+    .tag-list {
+        display: inline-block;
+        text-align: center;
+    }
+    .tag-list-item {
+        padding: 5px;
     }
     .epcl-border {
         background: #eee;

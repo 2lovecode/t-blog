@@ -28,7 +28,15 @@ body {
       font-size: 13px;
   }
 }
-
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #FF486A;
+}
+a:visited {
+  color:black;
+}
 
 #app {
   font-family: "DM Sans", sans-serif;
