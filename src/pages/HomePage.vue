@@ -104,6 +104,7 @@ export default {
         -ms-transition: all 300ms ease;
         -o-transition: all 300ms ease;
         transition: all 300ms ease;
+        
     }
     @media screen and (max-width: 990px) and (min-width: 768px) {
         .article-list-img {
@@ -228,6 +229,7 @@ export default {
     .tag-list {
         display: inline-block;
         text-align: center;
+
     }
     .tag-list-item {
         padding: 5px;
