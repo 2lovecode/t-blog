@@ -7,9 +7,10 @@
                         <span class="article-list-img" v-bind:style="{ backgroundImage: 'url(' + item.image + ')' }">
                             <el-button class="article-detail-button" type="danger" round="">Continue Reading</el-button>
                         </span>
-                        <h1 class="article-list-title">
+                            <h1 class="article-list-title">
                             <a>{{ item.title }}</a>
                         </h1>
+                        
                     </div>
                 </router-link>
                 <el-row type="flex" justify="center" style="margin-top:30px;" class="article-list-header">
@@ -158,29 +159,31 @@ export default {
         position: relative;
     }
     .article-list-title {
+        display: block;
         position: absolute;
         left: 40px;
         bottom: 45px;
-        padding: 14px 22px 10px;
-        max-width: 55%;
+        max-width: 50%;
         text-align: left;
         font-family: "Josefin Sans", sans-serif;
         font-weight: 700;
         font-size: 30px;
-        margin-bottom: 40px;
+        /* margin-bottom: 40px; */
         line-height: 1.45;
         letter-spacing: 0px;
         color: #242323;
-        background-color:rgb(255, 255, 255);
         -webkit-transition: all 700ms ease;
         -moz-transition: all 700ms ease;
         -ms-transition: all 700ms ease;
         -o-transition: all 700ms ease;
         transition: all 700ms ease;
     }
-    /* .article-list-list:hover .article-list-title{
-        pointer: cursor;
-    } */
+    .article-list-title a{
+        display: inline;
+        background-color:rgb(255, 255, 255);
+        padding: 14px 22px 10px;
+        -webkit-text-size-adjust: 100%;
+    }
     @media screen and (max-width: 980px) {
         .article-list-title {
             font-size: 20px;

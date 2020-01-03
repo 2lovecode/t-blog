@@ -15,6 +15,10 @@ export default {
 }
 </script>
 <style>
+h1 {
+  margin: 0;
+  padding: 0;
+}
 body {
   font-size: 16px;
 }
