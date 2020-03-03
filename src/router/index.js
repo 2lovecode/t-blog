@@ -4,7 +4,7 @@ export default [
         component: (resolve) => require(['@/pages/HomePage.vue'], resolve),
     },
     {
-        path: '/article/:id',
+        path: '/module/:module',
         component: (resolve) => require(['@/pages/article/ArticleDetail.vue'], resolve),
     }
 ]
