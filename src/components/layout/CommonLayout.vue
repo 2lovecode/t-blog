@@ -26,7 +26,7 @@
 export default {
     data () {
         return {
-            appName: "Veen",
+            appName: "2lovecode",
             homePage: "/",
             navList: [
                 {
