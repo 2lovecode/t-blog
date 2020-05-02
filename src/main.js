@@ -10,11 +10,19 @@ import './assets/fonts/font.css'
 import routes from "./router"
 import stores from "./store"
 
+import axios from "axios"
+import VueAxios from "vue-axios"
+
+axios.defaults.timeout = 5000
+axios.defaults.baseURL = "http://localhost:8888/"
+axios.defaults.headers['Access-Control-Allow-Origin'] = "*"
+axios.defaults.headers['Content-Type'] = "application/json"
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 Vue.use(Vuex)
 Vue.use(Element, { size: 'small', zIndex: 3000 })
+Vue.use(VueAxios, axios)
 
 const router = new VueRouter({
   routes

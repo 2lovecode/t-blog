@@ -34,15 +34,15 @@ export default {
                     title: "首页",
                 },
                 {
-                    path: "/article/1",
+                    path: "/module/develop",
                     title: "编程开发",
                 },
                 {
-                    path: "/article/2",
-                    title: "程序人生",
+                    path: "/module/interest-life",
+                    title: "趣事杂谈",
                 },
                 {
-                    path: "/article/3",
+                    path: "/module/about",
                     title: "关于作者",
                 },
             ]

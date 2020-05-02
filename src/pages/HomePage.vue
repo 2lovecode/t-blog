@@ -86,6 +86,14 @@ export default {
             ]
         }
     },
+    mounted: function () {
+        this.$http.get("test").then(function (response) {
+            console.log(response);
+            console.log("heelo");
+        }).catch(function (error) {
+            console.log(error)
+        })
+    }
 }
 </script>
 <style>

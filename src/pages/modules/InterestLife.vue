@@ -61,7 +61,7 @@ export default {
             articleList : [
                 {
                     articleID: 1,
-                    title: "Go语言",
+                    title: "摄影",
                     author: "2lovecode",
                     authorAvatar: "/assets/images/avatar/avatar-3.jpg",
                     createdTime: "October 17, 2019",
@@ -73,7 +73,7 @@ export default {
                 },
                 {
                     articleID: 2,
-                    title: "C语言",
+                    title: "旅游",
                     author: "2lovecode",
                     authorAvatar: "/assets/images/avatar/avatar-1.jpg",
                     createdTime: "October 17, 2019",

@@ -1,14 +1,18 @@
 <template>
     <div>
-        {{ detail.coverImage }}
+        {{ about.author }}
     </div>
 </template>
 <script>
 export default {
     data () {
         return {
-            detail : {
-                coverImage: "/assets/images/bg/2020/05/post-1.jpg"
+            about : {
+                author: "刘浩",
+                nickname: "2lovecode",
+                email: "liu546hao@163.com",
+                github: "https://github.com/2lovecode",
+                company: "",
             }
         }
     }
