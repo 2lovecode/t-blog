@@ -8,7 +8,7 @@ export default [
         component: (resolve) => require(['@/pages/article/ArticleDetail.vue'], resolve),
     },
     {
-        path: '/module/develop',
+        path: '/module/develop/:id',
         component: (resolve) => require(['@/pages/modules/Develop.vue'], resolve)
     },
     {
