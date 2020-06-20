@@ -14,7 +14,7 @@ import axios from "axios"
 import VueAxios from "vue-axios"
 
 axios.defaults.timeout = 5000
-axios.defaults.baseURL = "http://localhost:8888/"
+axios.defaults.baseURL = "http://104.168.246.185:8888/"
 axios.defaults.headers['Access-Control-Allow-Origin'] = "*"
 axios.defaults.headers['Content-Type'] = "application/json"
 
