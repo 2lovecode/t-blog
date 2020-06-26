@@ -55,6 +55,8 @@
     
 </template>
 <script>
+const article = require('@/api/article.js')
+const user = require('@/api/user.js')
 export default {
     data () {
         return {
@@ -87,12 +89,8 @@ export default {
         }
     },
     mounted: function () {
-        this.$http.get("test").then(function (response) {
-            console.log(response);
-            console.log("heelo");
-        }).catch(function (error) {
-            console.log(error)
-        })
+        article.fetchList()
+        user.test()
     }
 }
 </script>

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import CommonLayout from './components/layout/CommonLayout.vue'
+import CommonLayout from './pages/layout/CommonLayout.vue'
 
 export default {
   name: 'app',
