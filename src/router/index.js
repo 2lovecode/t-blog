@@ -6,6 +6,10 @@ export default [
         component: (resolve) => require(['@/pages/frontend/HomePage.vue'], resolve),
     },
     {
+        path: '/login',
+        component: (resolve) => require(['@/pages/Login.vue'], resolve)
+    },
+    {
         path: '/module/develop/:id',
         component: (resolve) => require(['@/pages/frontend/Develop.vue'], resolve)
     },
