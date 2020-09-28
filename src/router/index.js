@@ -10,7 +10,10 @@ export default [
     },
     {
         path: '/login',
-        component: (resolve) => require(['@/pages/Login.vue'], resolve)
+        component: (resolve) => require(['@/pages/Login.vue'], resolve),
+        meta: {
+            layoutType: "login",
+        },
     },
     {
         path: '/module/develop/:id',
@@ -30,6 +33,9 @@ export default [
     },
     {
         path: '/backend/article',
-        component: (resolve) => require(['@/pages/backend/Article.vue'], resolve)
+        component: (resolve) => require(['@/pages/backend/Article.vue'], resolve),
+        meta: {
+            layoutType: "backend",
+        },
     }
 ]

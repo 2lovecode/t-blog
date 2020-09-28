@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie'
 
 const state = {
-  pageType: 'frontend',
+  layoutType: 'frontend',
   sidebar: {
     opened: Cookies.get('sidebarStatus') ? !!+Cookies.get('sidebarStatus') : true,
     withoutAnimation: false
@@ -32,9 +32,9 @@ const mutations = {
     state.size = size
     Cookies.set('size', size)
   },
-  CHANGE_PAGE_TYPE: (state, type) => {
-    state.pageType = type
-  }
+  CHANGE_LAYOUT_TYPE: (state, type) => {
+    state.layoutType = type
+  },
 }
 
 // const actions = {
@@ -72,8 +72,8 @@ export default {
     setSize({ commit }, size) {
       commit('SET_SIZE', size)
     },
-    changePageType({ commit }, type) {
-      commit('CHANGE_PAGE_TYPE', type)
-    }
+    changeLayoutType({ commit }, type) {
+      commit('CHANGE_LAYOUT_TYPE', type)
+    },
   }
 }

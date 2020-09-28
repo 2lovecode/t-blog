@@ -1,27 +1,51 @@
 <template>
-    <el-form :model="numberValidateForm" ref="numberValidateForm" label-width="100px" class="demo-ruleForm">
-    <el-form-item
-        label="年龄"
-        prop="age"
-        :rules="[
-        { required: true, message: '年龄不能为空'},
-        { type: 'number', message: '年龄必须为数字值'}
-        ]"
-    >
-        <el-input type="age" v-model.number="numberValidateForm.age" autocomplete="off"></el-input>
-    </el-form-item>
-    <el-form-item>
-        <el-button type="primary" @click="submitForm('numberValidateForm')">提交</el-button>
-        <el-button @click="resetForm('numberValidateForm')">重置</el-button>
-    </el-form-item>
+  <el-row type="flex" class="row-bg" justify="center">
+  <el-col :span="6">
+  <el-card class="box-card">
+    <div slot="header" class="clearfix">
+      <span>卡片名称</span>
+      <el-button style="float: right; padding: 3px 0" type="text">注册</el-button>
+    </div>
+    <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+      <el-form-item label="用户" prop="username">
+        <el-input v-model="ruleForm.username"></el-input>
+      </el-form-item>
+      <el-form-item label="密码" prop="userpass">
+        <el-input type="password" v-model="ruleForm.userpass" autocomplete="off"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
+      </el-form-item>
     </el-form>
+  </el-card>
+  </el-col>
+  </el-row>
 </template>
 <script>
   export default {
     data() {
+      var validateName = (rule, value, callback) => {
+        if (!value) {
+          return callback(new Error('请输入用户名'));
+        }
+      };
+      var validatePass = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请输入密码'));
+        }
+      };
       return {
-        numberValidateForm: {
-          age: ''
+        ruleForm: {
+          username: '',
+          userpass: ''
+        },
+        rules: {
+          name: [
+            { validator: validateName, trigger: 'blur' }
+          ],
+          pass: [
+            { validator: validatePass, trigger: 'blur' }
+          ],
         }
       };
     },

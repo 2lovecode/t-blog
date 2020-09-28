@@ -37,11 +37,20 @@ const router = new VueRouter({
 })
 
 router.beforeResolve((to, from, next) => {
-  if (to.path == '/backend/article') {
-    store.dispatch('app/changePageType', 'backend')
+  var layoutType = "frontend"
+  if (to.meta.layoutType) {
+    layoutType = to.meta.layoutType
   } else {
-    store.dispatch('app/changePageType', 'frontend')
+    var pathT = to.fullPath.substr(1)
+    switch (pathT.substr(0, pathT.indexOf("/"))) {
+      case "backend":
+        layoutType = "backend"
+        break
+      default:
+        layoutType = "frontend"
+    }
   }
+  store.dispatch('app/changeLayoutType', layoutType)
   next()
 })
 router.beforeEach((to, from, next) => {

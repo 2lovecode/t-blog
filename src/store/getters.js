@@ -1,6 +1,6 @@
 const getters = {
-  pageType: (state) => () => {
-    return state.app.pageType
+  layoutType: (state) => () => {
+    return state.app.layoutType
   },
   sidebar: (state) => () => {
     return state.app.sidebar

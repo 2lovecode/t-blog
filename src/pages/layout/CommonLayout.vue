@@ -1,5 +1,5 @@
 <template>
-    <el-container v-if="pageType == 'frontend'">
+    <el-container v-if="layoutType == 'frontend'">
         <el-header style="height:auto;">
             <el-row style="padding-top: 50px;">
                 <el-col :span="24" style="margin:20px auto;">
@@ -20,7 +20,7 @@
         <el-divider></el-divider>
         <el-footer>{{ appName }}</el-footer>
     </el-container>
-    <el-container v-else-if="pageType == 'backend'">  
+    <el-container v-else-if="layoutType == 'backend'">  
         <el-header style="text-align: right; font-size: 12px">
             <el-dropdown>
             <i class="el-icon-setting" style="margin-right: 15px"></i>
@@ -56,6 +56,9 @@
                 </el-footer>
             </el-container>
         </el-container>
+    </el-container>
+    <el-container v-else-if="layoutType == 'login'">
+        <router-view></router-view>
     </el-container>
 </template>
 
@@ -105,8 +108,8 @@ export default {
         defaultRoute: function () {
             return this.$route.path
         },
-        pageType: function () {
-            return this.$store.getters.pageType()
+        layoutType: function () {
+            return this.$store.getters.layoutType()
         }
     }
 }
