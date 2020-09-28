@@ -4,6 +4,9 @@ export default [
     {
         path: '/',
         component: (resolve) => require(['@/pages/frontend/HomePage.vue'], resolve),
+        meta: {
+            requireAuth: true,
+        },
     },
     {
         path: '/login',

@@ -44,6 +44,20 @@ router.beforeResolve((to, from, next) => {
   }
   next()
 })
+router.beforeEach((to, from, next) => {
+  if (to.meta.requireAuth) {
+    if (store.state.token) {
+      next()
+    } else {
+      next({
+        path: "/login",
+        query: {redirect: to.fullPath},
+      })
+    }
+  } else {
+    next();
+  }
+})
 
 new Vue({
   router,

@@ -29,6 +29,10 @@ const mutations = {
 }
 
 const actions = {
+  goLogin() {
+    console.log("go-login")
+    router.push("/login")
+  },
   // user login
   login({ commit }, userInfo) {
     const { username, password } = userInfo
