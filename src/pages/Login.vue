@@ -3,19 +3,25 @@
   <el-col :span="6">
   <el-card class="box-card">
     <div slot="header" class="clearfix">
-      <span>卡片名称</span>
+      <span>登录</span>
       <el-button style="float: right; padding: 3px 0" type="text">注册</el-button>
     </div>
     <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-      <el-form-item label="用户" prop="username">
-        <el-input v-model="ruleForm.username"></el-input>
-      </el-form-item>
-      <el-form-item label="密码" prop="userpass">
-        <el-input type="password" v-model="ruleForm.userpass" autocomplete="off"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
-      </el-form-item>
+      <el-row class="login-input">
+        <el-input v-model="ruleForm.username">
+          <template slot="prepend">
+            <i class="el-icon-user"></i>
+          </template>
+        </el-input>
+      </el-row>
+      <el-row class="login-input">
+        <el-input type="password" v-model="ruleForm.userpass" autocomplete="off">
+          <template slot="prepend">
+            <i class="el-icon-lock"></i>
+          </template>
+        </el-input>
+      </el-row>
+      <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
     </el-form>
   </el-card>
   </el-col>
@@ -53,7 +59,14 @@
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!');
+            this.$store.dispatch('user/login', this.ruleForm)
+            .then(() => {
+              this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
+              this.loading = false
+            })
+            .catch(() => {
+              this.loading = false
+            })
           } else {
             console.log('error submit!!');
             return false;
@@ -66,3 +79,8 @@
     }
   }
 </script>
+<style scoped>
+  .login-input {
+    margin-bottom: 1em;
+  }
+</style>

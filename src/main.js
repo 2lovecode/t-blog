@@ -55,7 +55,7 @@ router.beforeResolve((to, from, next) => {
 })
 router.beforeEach((to, from, next) => {
   if (to.meta.requireAuth) {
-    if (store.state.token) {
+    if (store.getters.token) {
       next()
     } else {
       next({

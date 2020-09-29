@@ -29,15 +29,11 @@ const mutations = {
 }
 
 const actions = {
-  goLogin() {
-    console.log("go-login")
-    router.push("/login")
-  },
   // user login
   login({ commit }, userInfo) {
-    const { username, password } = userInfo
+    const { username, userpass } = userInfo
     return new Promise((resolve, reject) => {
-      login({ username: username.trim(), password: password }).then(response => {
+      login({ username: username.trim(), password: userpass }).then(response => {
         const { data } = response
         commit('SET_TOKEN', data.token)
         setToken(data.token)

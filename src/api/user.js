@@ -1,5 +1,7 @@
 import request from '@/utils/request'
 
+const USER_API_PREFIX = "api/v1/"
+
 export function test() {
   return request({
     url: '/test',
@@ -8,7 +10,7 @@ export function test() {
 }
 export function login(data) {
   return request({
-    url: '/user/login',
+    url: '/login',
     method: 'post',
     data
   })
@@ -16,7 +18,7 @@ export function login(data) {
 
 export function getInfo(token) {
   return request({
-    url: '/user/info',
+    url: USER_API_PREFIX+'user/info',
     method: 'get',
     params: { token }
   })
@@ -24,7 +26,7 @@ export function getInfo(token) {
 
 export function logout() {
   return request({
-    url: '/user/logout',
+    url: USER_API_PREFIX+'user/logout',
     method: 'post'
   })
 }
