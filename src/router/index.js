@@ -16,15 +16,19 @@ export default [
         },
     },
     {
-        path: '/module/develop/:id',
-        component: (resolve) => require(['@/pages/frontend/Develop.vue'], resolve)
+        path: '/frontend/archive',
+        component: (resolve) => require(['@/pages/frontend/Archive.vue'], resolve)
     },
     {
-        path: '/module/interest-life',
-        component: (resolve) => require(['@/pages/frontend/InterestLife.vue'], resolve)
+        path: '/frontend/category',
+        component: (resolve) => require(['@/pages/frontend/Category.vue'], resolve)
     },
     {
-        path: '/module/about',
+        path: '/frontend/say',
+        component: (resolve) => require(['@/pages/frontend/Say.vue'], resolve)
+    },
+    {
+        path: '/frontend/about',
         component: (resolve) => require(['@/pages/frontend/About.vue'], resolve)
     },
     {

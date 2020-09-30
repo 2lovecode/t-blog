@@ -74,31 +74,27 @@ export default {
                     title: "首页",
                 },
                 {
-                    path: "/module/develop/go",
-                    title: "Go",
+                    path: "/frontend/archive",
+                    title: "归档",
                 },
                 {
-                    path: "/module/develop/php",
-                    title: "PHP",
+                    path: "/frontend/category",
+                    title: "分类",
                 },
                 {
-                    path: "/module/interest-life",
-                    title: "趣味人生",
+                    path: "/frontend/tag",
+                    title: "标签",
                 },
                 {
-                    path: "/module/about",
-                    title: "关于作者",
+                    path: "/frontend/say",
+                    title: "胡言乱语",
                 },
                 {
-                    path: "/module/develop/e",
-                    title: "实验室",
+                    path: "/frontend/about",
+                    title: "关于",
                 },
                 {
-                    path: "/module/develop/knowledge",
-                    title: "知识图谱",
-                },
-                {
-                    path: "/backend/article",
+                    path: "/backend/",
                     title: "后台管理",
                 },
             ]
