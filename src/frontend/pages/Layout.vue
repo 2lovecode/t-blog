@@ -1,5 +1,5 @@
 <template>
-    <el-container v-if="layoutType == 'frontend'">
+    <el-container>
         <el-header style="height:auto;">
             <el-row style="padding-top: 50px;">
                 <el-col :span="24" style="margin:20px auto;">
@@ -20,46 +20,6 @@
         <el-divider></el-divider>
         <el-footer>{{ appName }}</el-footer>
     </el-container>
-    <el-container v-else-if="layoutType == 'backend'">  
-        <el-header style="text-align: right; font-size: 12px">
-            <el-dropdown>
-            <i class="el-icon-setting" style="margin-right: 15px"></i>
-            <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item>
-                  <el-link href="/" :underline="false">
-                  去前端首页
-                  </el-link>
-                </el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
-          <span>2lovecode</span>
-        </el-header>
-        <el-container>
-            <el-aside width="200px">
-                <el-menu :default-openeds="['1']">
-                    <el-submenu index="1">
-                        <template slot="title"><i class="el-icon-message"></i>内容管理</template>
-                        <el-menu-item-group>
-                        <template slot="title">文章</template>
-                        <el-menu-item index="1-1">文章列表</el-menu-item>
-                        <el-menu-item index="1-2">添加文章</el-menu-item>
-                        </el-menu-item-group>
-                    </el-submenu>
-                </el-menu>
-            </el-aside>
-            <el-container>
-                <el-main>
-                    <router-view></router-view>
-                </el-main>
-                <el-footer>
-                    
-                </el-footer>
-            </el-container>
-        </el-container>
-    </el-container>
-    <el-container v-else-if="layoutType == 'login'">
-        <router-view></router-view>
-    </el-container>
 </template>
 
 <script>
@@ -74,29 +34,25 @@ export default {
                     title: "首页",
                 },
                 {
-                    path: "/frontend/archive",
+                    path: "/archive",
                     title: "归档",
                 },
                 {
-                    path: "/frontend/category",
+                    path: "/category",
                     title: "分类",
                 },
                 {
-                    path: "/frontend/tag",
+                    path: "/tag",
                     title: "标签",
                 },
                 {
-                    path: "/frontend/say",
+                    path: "/say",
                     title: "胡言乱语",
                 },
                 {
-                    path: "/frontend/about",
+                    path: "/about",
                     title: "关于",
-                },
-                {
-                    path: "/backend/",
-                    title: "后台管理",
-                },
+                }
             ]
         }
     },

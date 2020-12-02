@@ -1,17 +1,13 @@
 <template>
   <div id="app">
-    <CommonLayout/>
+    Hello
   </div>
 </template>
 
 <script>
-import CommonLayout from './pages/layout/CommonLayout.vue'
 
 export default {
   name: 'app',
-  components: {
-    CommonLayout
-  }
 }
 </script>
 <style>

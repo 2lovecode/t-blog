@@ -23,5 +23,21 @@ module.exports = {
         }
       )
     ]
+  },
+  pages: {
+    home: {
+      template: "public/index.html",
+      entry: "src/frontend.js",
+      filename: "index.html",
+      title: "blog",
+      keywords: "blog",
+    },
+    admin: {
+      template: "public/index.html",
+      entry: "src/backend.js",
+      filename: "backend.html",
+      title: "blog",
+      keywords: "blog",
+    }
   }
 }
