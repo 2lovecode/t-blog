@@ -47,7 +47,7 @@ export default {
                 },
                 {
                     path: "/say",
-                    title: "胡言乱语",
+                    title: "说",
                 },
                 {
                     path: "/about",

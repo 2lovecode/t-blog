@@ -8,7 +8,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/fonts/font.css'
 
 import routes from "@/frontend/router"
-import store from "@/frontend/store"
+import store from "@/store"
 
 import axios from "axios"
 import VueAxios from "vue-axios"

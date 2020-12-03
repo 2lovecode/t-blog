@@ -7,7 +7,7 @@ export default [
         path: '/',
         component: (resolve) => require(['@/frontend/pages/HomePage.vue'], resolve),
         meta: {
-            requireAuth: true,
+            requireAuth: false,
         },
     },
     {
