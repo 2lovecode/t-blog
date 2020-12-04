@@ -1,10 +1,11 @@
 import request from '@/utils/request'
+import  Common from '@/api/common'
 
-const uri = process.env.VUE_APP_BASE_API_URI
+const c = new Common
 
 export function fetchList(query) {
   return request({
-    url: uri+'/articles',
+    url: c.FrontendApiPrefix+'articles',
     method: 'get',
     params: query
   })
@@ -12,7 +13,7 @@ export function fetchList(query) {
 
 export function fetchArticle(id) {
   return request({
-    url: uri+'/article',
+    url: c.FrontendApiPrefix+'article',
     method: 'get',
     params: { id }
   })
@@ -20,7 +21,7 @@ export function fetchArticle(id) {
 
 export function createArticle(data) {
   return request({
-    url: uri+'/article',
+    url: c.FrontendApiPrefix+'article',
     method: 'post',
     data
   })
@@ -28,7 +29,7 @@ export function createArticle(data) {
 
 export function updateArticle(id, data) {
   return request({
-    url: uri+'/article',
+    url: c.FrontendApiPrefix+'article',
     method: 'put',
     params: { id },
     data

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { MessageBox, Message } from 'element-ui'
 import store from '@/store'
+import router from '@/router'
 import { getToken } from '@/utils/auth'
 
 const service = axios.create({
@@ -14,7 +15,7 @@ service.interceptors.request.use(
   config => {
 
     if (store.getters.token) {
-      config.headers['TankBlog-Token'] = getToken()
+      config.headers['TankBlog-Token'] = 'Bearer '+getToken()
     }
     return config
   },
@@ -32,24 +33,28 @@ service.interceptors.response.use(
     if (res.code !== 200000) {
       console.log(res.code)
       Message({
-        message: res.message || 'Error',
+        message: res.msg || 'Error',
         type: 'error',
         duration: 5 * 1000
       })
-      return Promise.reject(new Error(res.message || 'Error'))
+      return Promise.reject(new Error(res.msg || 'Error'))
     } else {
       return res
     }
   },
   error => {
     if (error.response && error.response.status == 401) {
-      MessageBox.confirm('You have been logged out, you can cancel to stay on this page, or log in again', 'Confirm logout', {
+      let msg = "Some error happend"
+      if (error.response.data != undefined) {
+        msg = error.response.data.msg
+      }
+      MessageBox.confirm(msg+', Maybe you can try to log in again', 'Confirm logout', {
         confirmButtonText: 'Re-Login',
         cancelButtonText: 'Cancel',
         type: 'warning'
       }).then(() => {
         store.dispatch('user/resetToken').then(() => {
-          location.reload()
+          router.push('/login')
         })
       })
     } else {

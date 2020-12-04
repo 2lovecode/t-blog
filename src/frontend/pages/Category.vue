@@ -55,6 +55,7 @@
     
 </template>
 <script>
+const category = require('@/api/category.js')
 export default {
     data () {
         return {
@@ -86,5 +87,8 @@ export default {
             ]
         }
     },
+    mounted: function () {
+        category.fetchCategories()
+    }
 }
 </script>

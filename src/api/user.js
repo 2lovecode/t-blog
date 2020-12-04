@@ -1,8 +1,7 @@
 import request from '@/utils/request'
+import  Common from '@/api/common'
 
-const AUTH_API_PREFIX = "api/"
-const USER_API_PREFIX = "api/v1/"
-
+const c = new Common
 export function test() {
   return request({
     url: '/test',
@@ -11,7 +10,7 @@ export function test() {
 }
 export function login(data) {
   return request({
-    url: AUTH_API_PREFIX+'login',
+    url: c.AuthApiPrefix+'login',
     method: 'post',
     data
   })
@@ -19,7 +18,7 @@ export function login(data) {
 
 export function getInfo(token) {
   return request({
-    url: USER_API_PREFIX+'user/info',
+    url: c.FrontendApiPrefix+'user/info',
     method: 'get',
     params: { token }
   })
@@ -27,7 +26,7 @@ export function getInfo(token) {
 
 export function logout() {
   return request({
-    url: USER_API_PREFIX+'user/logout',
+    url: c.FrontendApiPrefix+'user/logout',
     method: 'post'
   })
 }

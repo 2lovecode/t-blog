@@ -1,8 +1,16 @@
-export function resetRouter() {
+import Vue from 'vue'
+import VueRouter from "vue-router"
+import store from "@/store"
 
+// 屏蔽错误提示
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
 }
 
-export default [
+Vue.use(VueRouter)
+
+const routes = [
     {
         path: '/',
         component: (resolve) => require(['@/frontend/pages/HomePage.vue'], resolve),
@@ -12,7 +20,7 @@ export default [
     },
     {
         path: '/login',
-        component: (resolve) => require(['@/frontend/pages/Login.vue'], resolve),
+        component: (resolve) => require(['@/Login.vue'], resolve),
     },
     {
         path: '/archive',
@@ -35,3 +43,31 @@ export default [
         component: (resolve) => require(['@/frontend/pages/ArticleDetail.vue'], resolve)
     }
 ]
+
+const router = new VueRouter({
+    routes
+})
+
+router.beforeEach((to, from, next) => {
+    if (to.meta.requireAuth) {
+      if (store.getters.token()) {
+        next()
+      } else {
+        next({
+          path: "/login",
+          query: {redirect: to.fullPath},
+        })
+      }
+    } else {
+      next();
+    }
+})
+
+export default router
+
+
+
+export function resetRouter() {
+
+}
+
