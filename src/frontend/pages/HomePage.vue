@@ -55,8 +55,8 @@
     
 </template>
 <script>
-const article = require('@/api/article.js')
-const user = require('@/api/user.js')
+// const article = require('@/api/article.js')
+// const user = require('@/api/user.js')
 export default {
     data () {
         return {
@@ -89,8 +89,8 @@ export default {
         }
     },
     mounted: function () {
-        article.fetchList()
-        user.test()
+        // article.fetchList()
+        // user.test()
     }
 }
 </script>

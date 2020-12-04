@@ -6,7 +6,7 @@ import { getToken } from '@/utils/auth'
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API_DOMAIN,
   headers: {'Access-Control-Allow-Origin' : "*"},
-  timeout: 5000 
+  timeout: 10000 
 })
 
 // request interceptor

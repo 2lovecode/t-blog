@@ -1,5 +1,6 @@
 import request from '@/utils/request'
 
+const AUTH_API_PREFIX = "api/"
 const USER_API_PREFIX = "api/v1/"
 
 export function test() {
@@ -10,7 +11,7 @@ export function test() {
 }
 export function login(data) {
   return request({
-    url: '/login',
+    url: AUTH_API_PREFIX+'login',
     method: 'post',
     data
   })
