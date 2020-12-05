@@ -33,22 +33,22 @@ export default {
                     path: "/",
                     title: "首页",
                 },
-                {
-                    path: "/archive",
-                    title: "归档",
-                },
+                // {
+                //     path: "/archive",
+                //     title: "归档",
+                // },
                 {
                     path: "/category",
                     title: "分类",
                 },
-                {
-                    path: "/tag",
-                    title: "标签",
-                },
-                {
-                    path: "/say",
-                    title: "说",
-                },
+                // {
+                //     path: "/tag",
+                //     title: "标签",
+                // },
+                // {
+                //     path: "/say",
+                //     title: "说",
+                // },
                 {
                     path: "/about",
                     title: "关于",
