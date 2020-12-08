@@ -35,7 +35,7 @@ export default {
                 github: "https://github.com/2lovecode",
                 company: "",
                 articleNum: 4,
-                description: "I love traveling. Travel is my life, and not just the business that I do. This is part of me... part of my feelings, thoughts, my past and future, a source of new strength and inspiration.",
+                description: "love code",
             }
         }
     },

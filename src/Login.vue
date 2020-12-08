@@ -1,13 +1,13 @@
 <template>
   <el-dialog
     title="登录"
-    width="20%"
+    width="22%"
     :close-on-click-modal="false"
     :close-on-press-escape="false"
     :show-close="false"
     :visible.sync="centerDialogVisible">
-    <el-row type="flex" class="row-bg" justify="center">
-    <el-col :span="18">
+    <el-row type="flex" justify="center">
+    <el-col :span="22">
       <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
         <el-row class="login-input">
           <el-input v-model="ruleForm.username">
@@ -24,7 +24,7 @@
           </el-input>
         </el-row>
         <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
-        <el-button type="primary" @click="submitForm('ruleForm')">注册</el-button>
+        <!-- <el-button type="primary" @click="submitForm('ruleForm')">注册</el-button> -->
       </el-form>
     </el-col>
     </el-row>
