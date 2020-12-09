@@ -5,7 +5,7 @@ const c = new Common
 
 export function fetchCategories(query) {
   return request({
-    url: c.FrontendApiPrefix+'categories',
+    url: c.FrontendApiPrefix+'category-list',
     method: 'get',
     params: query
   })

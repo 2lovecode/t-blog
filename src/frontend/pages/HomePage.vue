@@ -39,13 +39,12 @@
                     </el-col>
                 </el-row>
                 <el-row type="flex" justify="center" class="article-list-tags">
-                    <el-col :span="12" style="text-align:center;">
-                        <i class="tag-list-item el-icon-price-tag"></i>
-                        <div class="tag-list">
-                            <span class="tag-list-item" v-for="(tagItem, tagIndex) in item.tags" v-bind:key="tagIndex">
-                                <a href="#">{{ tagItem }}</a>
-                            </span>
-                        </div>
+                    <el-col :span="20" class="tag-group">
+                        <el-tag v-for="(tagItem, tagIndex) in item.tags" v-bind:key="tagIndex" type="info" effect="plain">
+                            <el-tooltip :content="tagItem" placement="top" effect="light">
+                                <span>{{ tagItem }}</span>
+                            </el-tooltip>
+                        </el-tag>
                     </el-col>
                 </el-row>
                 <div class="epcl-border small"></div>
@@ -65,20 +64,20 @@ export default {
                     articleID: 1,
                     title: "编程技巧",
                     author: "2lovecode",
-                    authorAvatar: "/assets/images/avatar/avatar-3.jpg",
-                    createdTime: "October 17, 2019",
+                    authorAvatar: "/assets/images/avatar/avatar-1.jpg",
+                    createdTime: "October 17, 2020",
                     image: "/assets/images/bg/2020/05/list-1.jpg",
-                    summary: "Welcome, it's great to have you here. We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time....",
+                    summary: "讲一讲编程的技巧",
                     visited: "100万+",
                     skipUrl: "article/1",
-                    tags: ["tag1", "tag2", "tag3"],
+                    tags: ["编程"],
                 },
                 {
                     articleID: 2,
                     title: "The spectacle before us was indeed sublime",
                     author: "2lovecode",
                     authorAvatar: "/assets/images/avatar/avatar-1.jpg",
-                    createdTime: "October 17, 2019",
+                    createdTime: "October 17, 2020",
                     image: "/assets/images/bg/2020/05/list-2.jpg",
                     summary: "Welcome, it's great to have you here. We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time....",
                     visited: "2000+",

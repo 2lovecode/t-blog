@@ -12,7 +12,11 @@ import store from "@/store"
 import axios from "axios"
 import VueAxios from "vue-axios"
 
+// import Icon from "vue-awesome/components/Icon"
+// import "vue-awesome/icons"
 
+// 全局注册
+// Vue.component("icon", Icon)
 
 Vue.config.productionTip = false
 

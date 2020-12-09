@@ -216,26 +216,9 @@ export default {
         color: #596172;
     }
     
-    .article-list-tags a {
-        font-size: 13px;
-        color: #596172;
-    }
-    .article-list-tags a:hover{
-        color: #FF486A;
-    }
-    .article-list-tags i {
-        display: inline-block;
-        line-height: 1.7;
-        transform:rotate(25deg);
-        -ms-transform:rotate(25deg); 	/* IE 9 */
-        -moz-transform:rotate(25deg); 	/* Firefox */
-        -webkit-transform:rotate(25deg); /* Safari 和 Chrome */
-        -o-transform:rotate(25deg);
-    }
     .tag-list {
         display: inline-block;
         text-align: center;
-
     }
     .tag-list-item {
         padding: 5px;
