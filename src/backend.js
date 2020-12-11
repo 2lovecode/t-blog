@@ -5,9 +5,10 @@ import Vuex from "vuex"
 import Element from "element-ui"
 
 import 'element-ui/lib/theme-chalk/index.css'
-import './assets/fonts/font.css'
+import '@/assets/fonts/font.css'
 
-import store from "./store"
+import router from "@/backend/router"
+import store from "@/backend/store"
 
 import axios from "axios"
 import VueAxios from "vue-axios"
@@ -22,6 +23,7 @@ Vue.use(Element, { size: 'small', zIndex: 3000 })
 Vue.use(VueAxios, axios)
 
 new Vue({
+  router,
   store,
   render: h => h(App),
 }).$mount('#app')

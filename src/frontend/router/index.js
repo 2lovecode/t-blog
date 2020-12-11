@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from "vue-router"
-import store from "@/store"
+import store from "@/frontend/store"
 
 // 屏蔽错误提示
 const originalPush = VueRouter.prototype.push

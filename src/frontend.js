@@ -6,17 +6,11 @@ import Element from "element-ui"
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/fonts/font.css'
 
-import router from "@/router"
-import store from "@/store"
+import router from "@/frontend/router"
+import store from "@/frontend/store"
 
 import axios from "axios"
 import VueAxios from "vue-axios"
-
-// import Icon from "vue-awesome/components/Icon"
-// import "vue-awesome/icons"
-
-// 全局注册
-// Vue.component("icon", Icon)
 
 Vue.config.productionTip = false
 

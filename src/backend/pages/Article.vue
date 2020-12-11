@@ -1,23 +1,31 @@
 <template>
   <div class="mavonEditor">
     <el-row class="article-form-row">
-      <el-input placeholder="请输入标题" v-model="title">
-        <template slot="prepend">标题</template>
-      </el-input>
+      <el-col>
+        <el-input placeholder="请输入标题" v-model="title">
+          <template slot="prepend">标题</template>
+        </el-input>
+      </el-col>
     </el-row>
     <el-row class="article-form-row">
-      <el-input placeholder="请输入描述" v-model="description">
-        <template slot="prepend">描述</template>
-      </el-input>
+      <el-col>
+        <el-input placeholder="请输入描述" v-model="description">
+          <template slot="prepend">描述</template>
+        </el-input>
+      </el-col>
     </el-row>
     <el-row class="article-form-row">
-      <mavon-editor 
-      :externalLink="externalLink"
-      v-model="content">
-      </mavon-editor>
+      <el-col>
+        <mavon-editor 
+        :externalLink="externalLink"
+        v-model="content">
+        </mavon-editor>
+      </el-col>
     </el-row>
     <el-row class="article-form-row">
-      <el-button type="info">发布</el-button>
+      <el-col :offset="22" :span="2">
+        <el-button type="success">发布</el-button>
+      </el-col>
     </el-row>
   </div>
 </template>

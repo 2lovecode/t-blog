@@ -1,8 +1,6 @@
 import axios from 'axios'
 import { MessageBox, Message } from 'element-ui'
-import store from '@/store'
-import router from '@/router'
-import { getToken } from '@/utils/auth'
+import { getToken, removeToken } from '@/utils/auth'
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API_DOMAIN,
@@ -13,10 +11,7 @@ const service = axios.create({
 // request interceptor
 service.interceptors.request.use(
   config => {
-
-    if (store.getters.token) {
-      config.headers['TankBlog-Token'] = 'Bearer '+getToken()
-    }
+    config.headers['TankBlog-Token'] = 'Bearer '+getToken()
     return config
   },
   error => {
@@ -53,9 +48,8 @@ service.interceptors.response.use(
         cancelButtonText: 'Cancel',
         type: 'warning'
       }).then(() => {
-        store.dispatch('user/resetToken').then(() => {
-          router.push('/login')
-        })
+        removeToken()
+        window.location.reload()
       })
     } else {
       console.log('err' + error) // for debug
