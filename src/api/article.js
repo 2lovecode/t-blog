@@ -5,7 +5,7 @@ const c = new Common
 
 export function fetchList(query) {
   return request({
-    url: c.FrontendApiPrefix+'articles',
+    url: c.FrontendApiPrefix+'article-list',
     method: 'get',
     params: query
   })

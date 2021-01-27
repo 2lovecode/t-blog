@@ -23,7 +23,7 @@
                     <el-col :xs="24" :sm="12" :md="8" :lg="4" :xl="4">
                         <el-link :underline="false">
                             <span class="time-icon"></span>
-                            <span>{{ item.addTime }}</span>
+                            <span>{{ item.createdTime }}</span>
                         </el-link>
                     </el-col>
                     <el-col :xs="24" :sm="12" :md="8" :lg="4" :xl="4">
@@ -54,29 +54,18 @@
     
 </template>
 <script>
-const article = require('@/api/article.js')
+// const article = require('@/api/article.js')
+// const user = require('@/api/user.js')
 export default {
     data () {
         return {
             articleList : [
                 {
-                    articleID: 1,
-                    title: "编程技巧",
-                    author: "2lovecode",
-                    authorAvatar: "/assets/images/avatar/avatar-1.jpg",
-                    addTime: "October 17, 2020",
-                    image: "/assets/images/bg/2020/05/list-1.jpg",
-                    summary: "讲一讲编程的技巧",
-                    visited: "100万+",
-                    skipUrl: "article/1",
-                    tags: ["编程"],
-                },
-                {
                     articleID: 2,
                     title: "The spectacle before us was indeed sublime",
                     author: "2lovecode",
                     authorAvatar: "/assets/images/avatar/avatar-1.jpg",
-                    addTime: "October 17, 2020",
+                    createdTime: "October 17, 2020",
                     image: "/assets/images/bg/2020/05/list-2.jpg",
                     summary: "Welcome, it's great to have you here. We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time....",
                     visited: "2000+",
@@ -86,16 +75,9 @@ export default {
             ]
         }
     },
-    methods: {
-        getArticleList() {
-            var tank = this
-            article.fetchList().then(function(res){
-                tank.articleList = res.data
-            })
-        }
-    },
     mounted: function () {
-        this.getArticleList()
+        // article.fetchList()
+        // user.test()
     }
 }
 </script>

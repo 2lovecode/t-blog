@@ -27,6 +27,7 @@
         <el-button type="success">发布</el-button>
       </el-col>
     </el-row>
+    <input type="hidden" value="尽管眼里所有的人都是善良的，但人总归是要分个亲疏远近，在这方面，我天然就输了。">
   </div>
 </template>
 <script>

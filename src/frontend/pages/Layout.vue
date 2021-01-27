@@ -37,14 +37,14 @@ export default {
                 //     path: "/archive",
                 //     title: "归档",
                 // },
-                {
-                    path: "/category",
-                    title: "分类",
-                },
                 // {
-                //     path: "/tag",
-                //     title: "标签",
+                //     path: "/category",
+                //     title: "分类",
                 // },
+                {
+                    path: "/tags",
+                    title: "标签",
+                },
                 // {
                 //     path: "/say",
                 //     title: "说",

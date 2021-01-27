@@ -27,20 +27,20 @@ const routes = [
         component: (resolve) => require(['@/frontend/pages/Archive.vue'], resolve)
     },
     {
-        path: '/category',
-        component: (resolve) => require(['@/frontend/pages/Category.vue'], resolve)
-    },
-    {
-        path: '/say',
-        component: (resolve) => require(['@/frontend/pages/Say.vue'], resolve)
-    },
-    {
         path: '/about',
         component: (resolve) => require(['@/frontend/pages/About.vue'], resolve)
     },
     {
-        path: '/article/:id',
+        path: '/article-detail/:id',
         component: (resolve) => require(['@/frontend/pages/ArticleDetail.vue'], resolve)
+    },
+    {
+      path: '/tags',
+      component: (resolve) => require(['@/frontend/pages/Tags.vue'], resolve)
+    },
+    {
+        path: '/tag-articles/:tagID',
+        component: (resolve) => require(['@/frontend/pages/TagArticles.vue'], resolve)
     }
 ]
 
