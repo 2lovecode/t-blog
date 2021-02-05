@@ -90,10 +90,27 @@ export default {
         getArticleList() {
             var tank = this
             article.fetchList().then(function(res){
-                tank.articleList = res.data
+                var list = res.data.list
+                console.log(list)
+                for (let x in list) {
+                    console.log("/article-detail/"+list[x]["articleID"])
+                    tank.articleList.push({
+                        articleID: list[x]["articleID"],
+                        title: list[x]["title"],
+                        author: list[x]["author"],
+                        authorAvatar: "",
+                        addTime: "",
+                        image: "",
+                        summary: "",
+                        visited: "",
+                        skipUrl: "/article-detail/"+list[x]["articleID"],
+                        tags: ["test"]
+                    })
+                }
             })
         }
     },
+    
     mounted: function () {
         this.getArticleList()
     }
